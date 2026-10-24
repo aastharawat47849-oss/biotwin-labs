@@ -110,6 +110,10 @@ def full_biomarker_analysis():
 def book_blood_test():
     return redirect("/#booking")
 
+@app.route("/future-bio-twin")
+def future_bio_twin():
+    return redirect("/#future")
+
 # =========================================================
 # API: BOOK TEST & TRIAL REGISTRATION
 # =========================================================
