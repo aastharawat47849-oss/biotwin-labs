@@ -3834,13 +3834,13 @@ Your membership is now active. Confirmation dispatched to WhatsApp.`);
                         if (seconds >= 15) {
                             clearInterval(facialScanTimer);
                             stopFacialScan();
-                            alert("🎉 Contactless Facial rPPG Scan Completed!
+                            alert(`🎉 Contactless Facial rPPG Scan Completed!
 
-Heart Rate: " + currentHR + " bpm
-HRV: " + currentHRV + " ms
+Heart Rate: ${currentHR} bpm
+HRV: ${currentHRV} ms
 Autonomic Stress: Optimal (26/100)
 
-Your living facial optical biomarker profile has been synchronized with your Bio-Twin.");
+Your living facial optical biomarker profile has been synchronized with your Bio-Twin.`);
                         }
                     }, 1000);
                 } catch (err) {

@@ -3838,7 +3838,13 @@ def generate_v5_html():
                         if (seconds >= 15) {
                             clearInterval(facialScanTimer);
                             stopFacialScan();
-                            alert("🎉 Contactless Facial rPPG Scan Completed!\n\nHeart Rate: " + currentHR + " bpm\nHRV: " + currentHRV + " ms\nAutonomic Stress: Optimal (26/100)\n\nYour living facial optical biomarker profile has been synchronized with your Bio-Twin.");
+                            alert(`🎉 Contactless Facial rPPG Scan Completed!
+
+Heart Rate: ${currentHR} bpm
+HRV: ${currentHRV} ms
+Autonomic Stress: Optimal (26/100)
+
+Your living facial optical biomarker profile has been synchronized with your Bio-Twin.`);
                         }
                     }, 1000);
                 } catch (err) {
