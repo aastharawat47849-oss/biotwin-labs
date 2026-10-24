@@ -413,10 +413,10 @@ def download_pdf(report_id):
         abort(404)
 
 if __name__ == "__main__":
-    port = 5050
+    port = int(os.environ.get("PORT", 5050))
     print("=" * 60)
     print("   BIOTWIN LABS - LIVE SECURED WEB PLATFORM READY   ")
-    print(f"   Open in Browser: http://127.0.0.1:{port}")
+    print(f"   Open in Browser: http://0.0.0.0:{port}")
     print("   Founder CRM Protected: Master PIN Required (9343)")
     print("=" * 60)
-    app.run(host="127.0.0.1", port=port, debug=False)
+    app.run(host="0.0.0.0", port=port, debug=False)

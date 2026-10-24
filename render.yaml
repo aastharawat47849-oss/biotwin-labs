@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: biotwin-labs
+    env: python
+    region: singapore
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn web.app:app
+    envVars:
+      - key: FLASK_SECRET
+        generateValue: true
