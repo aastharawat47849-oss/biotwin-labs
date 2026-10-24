@@ -23,7 +23,7 @@ from bio_age_calculator import calculate_pheno_age, evaluate_subsystems
 from ai_ops_manager import BioTwinAIOpsManager
 
 app = Flask(__name__)
-app.secret_key = os.environ.get("FLASK_SECRET", "biotwin_super_secure_9343062265_vault_secret")
+app.secret_key = os.environ.get("FLASK_SECRET", "biotwin_super_secure_vault_secret")
 
 # Master Founder Security PIN (Derived from founder's phone: 9343)
 FOUNDER_PIN = "9343"
@@ -194,7 +194,7 @@ def api_verify_payment():
             "plan": plan,
             "amount": amount,
             "date": timestamp,
-            "beneficiary": "9343062265@upi",
+            "beneficiary": "biotwinlabs@upi",
             "status": "Pending Bank Match"
         })
 
@@ -204,7 +204,7 @@ def api_verify_payment():
             "name": name,
             "phone": phone,
             "age": 35,
-            "address": f"Payment: ₹{amount} via UPI to 9343062265",
+            "address": f"Payment: ₹{amount} via UPI to support@biotwinlabs.com",
             "slot": plan,
             "utr": utr,
             "order_id": order_id,
