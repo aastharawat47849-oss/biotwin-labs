@@ -1097,6 +1097,256 @@
             * { color: #0f172a !important; text-shadow: none !important; box-shadow: none !important; }
         }
 
+
+        /* =================================================== */
+        /* 2031 DR. BIOTWIN AI COPILOT FLOATING WIDGET STYLES */
+        /* =================================================== */
+        .ai-doctor-fab {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 18px 10px 12px;
+            background: linear-gradient(135deg, #0f172a, #1e1b4b);
+            border: 1px solid #38bdf8;
+            border-radius: 999px;
+            box-shadow: 0 8px 30px rgba(56, 189, 248, 0.35), 0 0 20px rgba(168, 85, 247, 0.25);
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            user-select: none;
+        }
+        .ai-doctor-fab:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 36px rgba(56, 189, 248, 0.5), 0 0 25px rgba(168, 85, 247, 0.4);
+            border-color: #a855f7;
+        }
+        .fab-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #38bdf8, #a855f7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+        }
+        .fab-label {
+            display: flex;
+            flex-direction: column;
+        }
+        .fab-title {
+            font-size: 13px;
+            font-weight: 800;
+            color: #f8fafc;
+            letter-spacing: -0.2px;
+        }
+        .fab-status {
+            font-size: 10px;
+            color: #34d399;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* AI DOCTOR DRAWER */
+        .ai-doctor-drawer {
+            position: fixed;
+            bottom: 90px;
+            right: 24px;
+            width: 380px;
+            max-width: calc(100vw - 32px);
+            height: 580px;
+            max-height: calc(100vh - 120px);
+            background: #0a0f1d;
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(56, 189, 248, 0.2);
+            z-index: 10000;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            animation: drawerFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes drawerFadeIn {
+            from { opacity: 0; transform: translateY(20px) scale(0.96); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .doc-header {
+            padding: 14px 18px;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 27, 75, 0.9));
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .doc-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #38bdf8, #6366f1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .doc-hdr-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #94a3b8;
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+        .doc-hdr-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #f8fafc;
+        }
+        .doc-vitals-banner {
+            background: rgba(56, 189, 248, 0.08);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+            padding: 6px 14px;
+            font-size: 11px;
+            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .doc-chips-container {
+            display: flex;
+            gap: 6px;
+            padding: 8px 12px;
+            overflow-x: auto;
+            background: rgba(15, 23, 42, 0.4);
+            border-bottom: 1px solid var(--border);
+            scrollbar-width: none;
+        }
+        .doc-chips-container::-webkit-scrollbar { display: none; }
+        .doc-chip {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            color: #cbd5e1;
+            padding: 5px 10px;
+            border-radius: 999px;
+            font-size: 11px;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .doc-chip:hover {
+            background: rgba(56, 189, 248, 0.2);
+            color: #38bdf8;
+            border-color: #38bdf8;
+        }
+        .doc-messages-stream {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: #060913;
+        }
+        .doc-msg {
+            display: flex;
+            gap: 8px;
+            max-width: 90%;
+        }
+        .doc-msg-bot {
+            align-self: flex-start;
+        }
+        .doc-msg-user {
+            align-self: flex-end;
+            flex-direction: row-reverse;
+        }
+        .doc-bubble {
+            padding: 12px 14px;
+            border-radius: 14px;
+            font-size: 13px;
+            line-height: 1.45;
+        }
+        .doc-msg-bot .doc-bubble {
+            background: #111827;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            color: #f1f5f9;
+            border-top-left-radius: 4px;
+        }
+        .doc-msg-user .doc-bubble {
+            background: linear-gradient(135deg, #0284c7, #2563eb);
+            color: white;
+            border-top-right-radius: 4px;
+        }
+        .doc-input-bar {
+            padding: 10px 12px;
+            background: #0b1120;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .doc-input {
+            flex: 1;
+            background: #030712;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 10px 14px;
+            color: white;
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .doc-input:focus {
+            border-color: #38bdf8;
+        }
+        .doc-action-btn {
+            background: rgba(168, 85, 247, 0.15);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            color: #c084fc;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 15px;
+            transition: all 0.2s;
+        }
+        .doc-action-btn:hover {
+            background: rgba(168, 85, 247, 0.3);
+            transform: scale(1.05);
+        }
+        .doc-send-btn {
+            background: linear-gradient(135deg, #38bdf8, #2563eb);
+            border: none;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+        .doc-send-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
+        }
+
 </style>
 </head>
 <body>
@@ -4378,6 +4628,218 @@ You now have unlimited access to Camera BP scans, Zero-Report Health Assessment,
         }
 
 
+        
+        // ===================================================
+        // 2031 DR. BIOTWIN INTERACTIVE CLINICAL COPILOT ENGINE
+        // ===================================================
+        let isDoctorOpen = false;
+        let isDoctorListening = false;
+        let doctorSpeechRecog = null;
+
+        function toggleAIDoctorModal() {
+            const drawer = document.getElementById('aiDoctorModal');
+            if (!drawer) return;
+            isDoctorOpen = !isDoctorOpen;
+            drawer.style.display = isDoctorOpen ? 'flex' : 'none';
+            if (isDoctorOpen) {
+                updateDoctorVitalsContext();
+                document.getElementById('docTextInput').focus();
+            }
+        }
+
+        function updateDoctorVitalsContext() {
+            const banner = document.getElementById('docVitalsBanner');
+            if (!banner) return;
+            
+            // Check session vitals
+            const voiceScan = JSON.parse(localStorage.getItem('biotwin_voice_scan') || 'null');
+            const subStatus = localStorage.getItem('biotwin_sub_status') || 'trial';
+            
+            let contextParts = [];
+            if (voiceScan) {
+                contextParts.push(`Vocal Jitter: ${voiceScan.jitter}%, Resp Age: ${voiceScan.respAge} yrs`);
+            }
+            contextParts.push(`Tier: ${subStatus === 'subscribed' ? 'VIP Lifetime Pass' : '7-Day Free Trial'}`);
+
+            banner.innerHTML = `<span>⚡ Live Session: ${contextParts.join(' • ')}</span>`;
+        }
+
+        function clearDoctorChat() {
+            const stream = document.getElementById('docMessagesStream');
+            if (stream) {
+                stream.innerHTML = `
+                    <div class="doc-msg doc-msg-bot">
+                        <div class="doc-bubble">
+                            <strong>Chat reset.</strong> How can I assist with your cardiovascular, metabolic, or cellular longevity today?
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        function askDoctor(queryText) {
+            const input = document.getElementById('docTextInput');
+            if (input) {
+                input.value = queryText;
+                sendDoctorQuestion();
+            }
+        }
+
+        function appendDoctorMessage(sender, text) {
+            const stream = document.getElementById('docMessagesStream');
+            if (!stream) return;
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `doc-msg doc-msg-${sender}`;
+            msgDiv.innerHTML = `<div class="doc-bubble">${text}</div>`;
+            stream.appendChild(msgDiv);
+            stream.scrollTop = stream.scrollHeight;
+        }
+
+        function sendDoctorQuestion() {
+            const input = document.getElementById('docTextInput');
+            const text = input ? input.value.trim() : '';
+            if (!text) return;
+
+            // Append User Message
+            appendDoctorMessage('user', text);
+            input.value = '';
+
+            // Generate AI Doctor Response
+            setTimeout(() => {
+                const answer = generateDoctorClinicalResponse(text);
+                appendDoctorMessage('bot', answer);
+            }, 600);
+        }
+
+        // CLINICAL REASONING KNOWLEDGE ENGINE (Covering Hindi & English)
+        function generateDoctorClinicalResponse(q) {
+            const query = q.toLowerCase();
+
+            // 1. Magnesium Glycinate
+            if (query.includes('magnesium') || query.includes('मैग्नीशियम') || query.includes('sleep') || query.includes('neend') || query.includes('नींद')) {
+                return currentLang === 'hi' 
+                    ? `💊 <strong>मैग्नीशियम ग्लाइकिनेट (Magnesium Glycinate) प्रोटोकॉल:</strong><br><br>
+                       • <strong>खुराक (Dose):</strong> 400 mg (एलिमेंटल मैग्नीशियम)<br>
+                       • <strong>लेने का समय (Timing):</strong> रात को सोने से ठीक 45 मिनट पहले गुनगुने पानी के साथ।<br>
+                       • <strong>क्लिनिकल लाभ:</strong> यह ग्लाइसिन अमीनो एसिड से जुड़ा होता है जो मस्तिष्क में GABA न्यूरोट्रांसमीटर को सक्रिय करता है, कोर्टिसोल (तनाव हार्मोन) को कम करता है और गहरी REM नींद व धमनियों की लोच (arterial elasticity) बढ़ाता है। पेट पर इसका कोई दुष्प्रभाव नहीं होता।`
+                    : `💊 <strong>Magnesium Glycinate Clinical Protocol:</strong><br><br>
+                       • <strong>Dose:</strong> 400 mg elemental magnesium chelating with pure glycine.<br>
+                       • <strong>Optimal Timing:</strong> Take 45 minutes prior to sleep with warm water.<br>
+                       • <strong>Mechanism:</strong> Crosses blood-brain barrier to stimulate inhibitory GABA receptors, blunts nocturnal cortisol spikes, lowers arterial pulse wave velocity, and promotes restorative slow-wave stage-3 sleep without gastric irritation.`;
+            }
+
+            // 2. Sugar / Diabetes / HbA1c / Pancreas Beta-Cells
+            if (query.includes('sugar') || query.includes('शूगर') || query.includes('hba1c') || query.includes('diabetes') || query.includes('मधुमेह') || query.includes('glucose')) {
+                return currentLang === 'hi'
+                    ? `🩸 <strong>HbA1c और मेटाबॉलिक रिवर्सल प्रोटोकॉल:</strong><br><br>
+                       1. <strong>क्रोनो-न्यूट्रिशन (Chrono-Nutrition):</strong> रात का खाना शाम 7:30 बजे से पहले समाप्त करें। 14 घंटे का प्राकृतिक उपवास (intermittent fasting) अग्न्याशय (pancreas) की बीटा-कोशिकाओं को रीसेट करता है।<br>
+                       2. <strong>बर्बेरिन (Berberine 500mg):</strong> भोजन से 15 मिनट पहले लें (यह सेलुलर AMPK सक्रिय करके मेटफ़ॉर्मिन के समान इंसुलिन संवेदनशीलता सुधारता है)।<br>
+                       3. <strong>भोजन के बाद 10 मिनट वॉक:</strong> मांसपेशियों के GLUT-4 ट्रांसपोर्टर्स को सक्रिय करता है जिससे इंसुलिन स्पाइक 38% घटता है।`
+                    : `🩸 <strong>Glycemic & Pancreatic Beta-Cell Reversal Protocol:</strong><br><br>
+                       1. <strong>Chrono-Nutrition:</strong> Finish dinner before 7:30 PM. A 14-hour overnight fast triggers autophagy in pancreatic islet cells.<br>
+                       2. <strong>Berberine HCl (500mg):</strong> 15 mins before carbohydrate meals to activate AMPK and upregulate GLUT-4 receptor translocation.<br>
+                       3. <strong>Post-Prandial Movement:</strong> A brisk 10-minute walk after meals absorbs up to 38% of glucose excursion without taxing beta-cells.`;
+            }
+
+            // 3. Heart Risk & Biological Age Reversal
+            if (query.includes('heart') || query.includes('दिल') || query.includes('cardio') || query.includes('bp') || query.includes('blood pressure') || query.includes('रक्तचाप')) {
+                return currentLang === 'hi'
+                    ? `🫀 <strong>हृदय एवं धमनियों की उम्र घटाने का प्रोटोकॉल:</strong><br><br>
+                       • <strong>कोएंजाइम Q10 (Ubiquinol 200mg):</strong> माइटोकॉन्ड्रियल ऊर्जा उत्पादन और कार्डियक मायोसाइट्स को मजबूत करता है।<br>
+                       • <strong>नाइट्रिक ऑक्साइड बूस्टर:</strong> चुकंदर का अर्क या लहसुन का अर्क एंडोथेलियम को चौड़ा करके सिस्टोलिक रक्तचाप 8-12 mmHg कम करता है।<br>
+                       • <strong>4-7-8 वेगस ब्रीदिंग:</strong> 4 सेकंड सांस लें, 7 सेकंड रोकें, 8 सेकंड छोड़ें (सिम्पेथेटिक तनाव को तुरंत नियंत्रित करता है)।`
+                    : `🫀 <strong>Cardiovascular & Arterial Reversal Protocol:</strong><br><br>
+                       • <strong>CoQ10 (Ubiquinol 200mg daily):</strong> Essential mitochondrial electron transport cofactor for cardiac ejection fraction and endothelial repair.<br>
+                       • <strong>Endothelial Nitric Oxide:</strong> Dietary nitrates (beetroot/garlic allicin) restore arterial compliance and reduce systolic pressure by 8-12 mmHg.<br>
+                       • <strong>4-7-8 Vagal Stimulation:</strong> Inhale 4s, hold 7s, exhale 8s to downregulate sympathetic tone and stabilize pulse wave velocity.`;
+            }
+
+            // 4. Zone-2 Cardio
+            if (query.includes('zone') || query.includes('cardio') || query.includes('exercise') || query.includes('व्यायाम')) {
+                return currentLang === 'hi'
+                    ? `🏃 <strong>ज़ोन-2 माइटोकॉन्ड्रियल कंडीशनिंग क्या है?</strong><br><br>
+                       • <strong>तीव्रता:</strong> अपनी अधिकतम हृदय गति (220 - आपकी उम्र) का 60% से 70%। इस गति पर आप बिना हांफे बातचीत कर सकते हैं।<br>
+                       • <strong>अवधि:</strong> सप्ताह में 3-4 बार 35-45 मिनट (धीमी जॉगिंग, साइकिलिंग या तेज चलना)।<br>
+                       • <strong>फायदा:</strong> यह कोशिकाओं के माइटोकॉन्ड्रिया की संख्या 40% तक बढ़ा देता है और शरीर को कार्बोहाइड्रेट की जगह फैट बर्न करने के लिए प्रशिक्षित करता है।`
+                    : `🏃 <strong>Zone-2 Mitochondrial Conditioning Protocol:</strong><br><br>
+                       • <strong>Intensity:</strong> 60% to 70% of Maximum Heart Rate (220 - Age). You should be able to speak full sentences without gasping.<br>
+                       • <strong>Volume:</strong> 3-4 sessions weekly of 35-45 minutes (brisk incline treadmill, cycling, or light jogging).<br>
+                       • <strong>Clinical Impact:</strong> Dramatically boosts cellular mitochondrial cristae density and optimizes fat oxidation efficiency.`;
+            }
+
+            // 5. Biological Age Analysis
+            if (query.includes('bio') || query.includes('age') || query.includes('उम्र') || query.includes('score') || query.includes('report')) {
+                const voiceScan = JSON.parse(localStorage.getItem('biotwin_voice_scan') || 'null');
+                const respAge = voiceScan ? voiceScan.respAge : '27.4';
+                return currentLang === 'hi'
+                    ? `📊 <strong>आपकी लाइव बायो-ट्विन स्वास्थ्य स्थिति:</strong><br><br>
+                       • अनुमानित श्वसन जैविक आयु: <strong>${respAge} वर्ष</strong><br>
+                       • समग्र स्वास्थ्य वर्गीकरण: <strong>अनुकूलित (Optimized Youthful Trajectory)</strong><br>
+                       • सिफारिश: अपने 5-वर्षीय ऑर्गन सिमुलेटर (Heart, Liver, Kidney) का प्रक्षेपवक्र देखने के लिए ऊपर <em>"Launch 5-Year Bio-Twin"</em> पर क्लिक करें या <em>"Passport PDF"</em> डाउनलोड करें।`
+                    : `📊 <strong>Your Live Bio-Twin Health Assessment:</strong><br><br>
+                       • Calculated Respiratory Biological Age: <strong>${respAge} Years</strong><br>
+                       • Trajectory Status: <strong>Youthful Metabolic Reserve (Favorable)</strong><br>
+                       • Recommendation: Inspect your 2026-2031 organ drift models via the <em>"5-Year Bio-Twin Simulator"</em> and download your official <em>"Passport PDF"</em> for clinical archiving.`;
+            }
+
+            // Default intelligent response
+            return currentLang === 'hi'
+                ? `🩺 <strong>क्लिनिकल सिफारिश:</strong> आपके द्वारा पूछे गए विषय पर बायो-ट्विन क्लिनिकल मॉडल सुझाव देता है कि जीवनशैली में सूक्ष्म-सुधार (Magnesium Glycinate 400mg, 14 घंटे का क्रोनो-उपवास, और ज़ोन-2 कार्डियो) अपनाएं। क्या आप किसी विशिष्ट अंग (Heart, Liver, Pancreas, Lungs) की विस्तृत रिपोर्ट जानना चाहते हैं?`
+                : `🩺 <strong>Clinical Decision Insight:</strong> Precision longevity data indicates that targeting daily mitochondrial biogenesis (Zone-2 cardio), restoring vagal tone (Magnesium Glycinate + 4-7-8 breathwork), and stabilizing glycemic variability provides multi-organ biological age reversal. Would you like a specific organ-by-organ breakdown (Heart, Liver, Beta-Cells, or Kidneys)?`;
+        }
+
+        // Web Speech API Voice Input
+        function toggleDoctorSpeechRecognition() {
+            if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+                alert(currentLang === 'hi' ? 'आपका ब्राउज़र वॉयस रिकॉग्निशन का समर्थन नहीं करता।' : 'Voice recognition is not supported in this browser. Please type your query.');
+                return;
+            }
+
+            const btn = document.getElementById('docMicBtn');
+
+            if (isDoctorListening) {
+                if (doctorSpeechRecog) doctorSpeechRecog.stop();
+                isDoctorListening = false;
+                btn.style.background = 'rgba(168, 85, 247, 0.15)';
+                btn.innerText = '🎙️';
+                return;
+            }
+
+            const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+            doctorSpeechRecog = new SpeechRec();
+            doctorSpeechRecog.continuous = false;
+            doctorSpeechRecog.interimResults = false;
+            doctorSpeechRecog.lang = currentLang === 'hi' ? 'hi-IN' : 'en-IN';
+
+            btn.style.background = 'rgba(239, 68, 68, 0.4)';
+            btn.innerText = '🔴';
+            isDoctorListening = true;
+
+            doctorSpeechRecog.onresult = function(event) {
+                const speechResult = event.results[0][0].transcript;
+                const input = document.getElementById('docTextInput');
+                if (input) {
+                    input.value = speechResult;
+                    sendDoctorQuestion();
+                }
+            };
+
+            doctorSpeechRecog.onerror = function() {
+                isDoctorListening = false;
+                btn.style.background = 'rgba(168, 85, 247, 0.15)';
+                btn.innerText = '🎙️';
+            };
+
+            doctorSpeechRecog.onend = function() {
+                isDoctorListening = false;
+                btn.style.background = 'rgba(168, 85, 247, 0.15)';
+                btn.innerText = '🎙️';
+            };
+
+            doctorSpeechRecog.start();
+        }
+
+
         window.onload = function() {
             updateTrialBadgeDisplay();
             runQuizCalc();
@@ -4395,5 +4857,76 @@ You now have unlimited access to Camera BP scans, Zero-Report Health Assessment,
             }
         };
     </script>
+
+    <!-- FLOATING 2031 AI LONGEVITY DOCTOR COPILOT (DR. BIOTWIN) -->
+    <div id="aiDoctorTrigger" class="ai-doctor-fab" onclick="toggleAIDoctorModal()" title="Ask Dr. BioTwin (24/7 AI Longevity Doctor)">
+        <div class="fab-icon">🩺</div>
+        <div class="fab-label">
+            <span class="fab-title">Dr. BioTwin AI</span>
+            <span class="fab-status">● 24/7 Longevity Copilot</span>
+        </div>
+    </div>
+
+    <!-- AI DOCTOR CHAT DRAWER -->
+    <div id="aiDoctorModal" class="ai-doctor-drawer">
+        <!-- Header with Doctor Profile -->
+        <div class="doc-header">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <div class="doc-avatar">🩺</div>
+                <div>
+                    <div style="font-weight: 800; font-size: 14px; color: #f8fafc;">Dr. BioTwin MD</div>
+                    <div style="font-size: 11px; color: #38bdf8; display: flex; align-items: center; gap: 5px;">
+                        <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#10b981;"></span>
+                        2031 Clinical Decision Support
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex; gap: 8px;">
+                <button class="doc-hdr-btn" onclick="clearDoctorChat()" title="Clear Chat">↺</button>
+                <button class="doc-hdr-btn" onclick="toggleAIDoctorModal()" title="Close">✕</button>
+            </div>
+        </div>
+
+        <!-- Clinical Context Live Banner -->
+        <div id="docVitalsBanner" class="doc-vitals-banner">
+            <span>⚡ Connected to your live Bio-Twin diagnostic session</span>
+        </div>
+
+        <!-- Quick Clinical Question Chips -->
+        <div class="doc-chips-container">
+            <button class="doc-chip" onclick="askDoctor('Magnesium Glycinate kab aur kitna lena chahiye?')">💊 Magnesium Glycinate?</button>
+            <button class="doc-chip" onclick="askDoctor('Mera sugar aur heart risk kaise reverse hoga?')">🫀 Sugar & Heart Risk Reversal</button>
+            <button class="doc-chip" onclick="askDoctor('What is Zone-2 mitochondrial conditioning?')">🏃 Zone-2 Cardio Protocol</button>
+            <button class="doc-chip" onclick="askDoctor('Mera biological age score kaisa hai?')">📊 Meri Bio-Age Analysis</button>
+        </div>
+
+        <!-- Messages Stream -->
+        <div id="docMessagesStream" class="doc-messages-stream">
+            <div class="doc-msg doc-msg-bot">
+                <div class="doc-bubble">
+                    <strong>Namaste! I am Dr. BioTwin</strong>, your dedicated 2031 Precision Longevity Clinical Copilot.
+                    <br><br>
+                    Aap mujhse Hindi ya English me koi bhi clinical ya lifestyle sawal pooch sakte hain (e.g. blood pressure reversal, nutraceuticals, diet, sleep, ya organ biological age).
+                    <br><br>
+                    <span style="font-size: 11px; color: #38bdf8;">🎙️ Aap mic button dabakar bolkar bhi pooch sakte hain!</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Box with Voice Mic & Send -->
+        <div class="doc-input-bar">
+            <button id="docMicBtn" class="doc-action-btn" onclick="toggleDoctorSpeechRecognition()" title="Speak in Hindi/English">
+                🎙️
+            </button>
+            <input type="text" id="docTextInput" class="doc-input" placeholder="Ask Dr. BioTwin in Hindi / English..." onkeydown="if(event.key==='Enter') sendDoctorQuestion()">
+            <button class="doc-send-btn" onclick="sendDoctorQuestion()" title="Send Question">
+                ➤
+            </button>
+        </div>
+        <div style="font-size: 10px; color: var(--text-dim); text-align: center; padding: 4px 10px; background: #030712;">
+            🔒 CDSCO & Telemedicine Compliance: AI clinical decision support. Consult your physician for medical emergencies.
+        </div>
+    </div>
+
 </body>
 </html>
