@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- App Icons & PWA Manifest -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="BioTwin Labs">
+    <meta name="theme-color" content="#050814">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#05070c">
     <meta charset="UTF-8">
@@ -1454,7 +1462,28 @@
                 <span id="catalogCount" style="font-size: 12px; color: var(--text-dim); font-weight: normal;">Showing 7 services</span>
             </div>
 
-            <div class="catalog-grid" id="catalogGrid">
+            
+            <!-- 100% CLINICAL TRUST & PATIENT ASSURANCE BANNER -->
+            <div style="background: linear-gradient(90deg, rgba(16, 185, 129, 0.08), rgba(56, 189, 248, 0.08)); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 12px; padding: 12px 18px; margin-bottom: 24px; display: flex; flex-wrap: wrap; justify-content: space-around; align-items: center; gap: 14px; font-size: 12px; color: #cbd5e1;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 18px;">🛡️</span>
+                    <span><strong>Govt. CDSCO Telemedicine Compliant</strong> (2020 Guidelines)</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 18px;">🔒</span>
+                    <span><strong>256-Bit Banking Grade Encryption</strong> (DISHA Health Privacy)</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 18px;">🏥</span>
+                    <span><strong>NABL-Accredited Lab Phlebotomy</strong> (₹1,999 At-Home)</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 18px;">💰</span>
+                    <span><strong>100% Money-Back Guarantee</strong> (UPI / Support: 9343062265)</span>
+                </div>
+            </div>
+    
+<div class="catalog-grid" id="catalogGrid">
                 
                 <!-- CARD 1 -->
                 <div class="service-card" onclick="openProtectedScreen('camera')" data-tags="camera bp blood pressure sugar mobile pulse instant free">
@@ -4840,6 +4869,16 @@ You now have unlimited access to Camera BP scans, Zero-Report Health Assessment,
         }
 
 
+        
+        // Register PWA Service Worker for Offline Speed & Native Mobile Installation
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('✓ BioTwin PWA Service Worker Active'))
+                    .catch(err => console.log('SW registration error:', err));
+            });
+        }
+    
         window.onload = function() {
             updateTrialBadgeDisplay();
             runQuizCalc();
