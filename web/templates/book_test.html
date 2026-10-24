@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Home Blood Draw (₹1,999) | BioTwin Labs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #05070c;
+            --surface: #0a0f1a;
+            --surface-card: #111827;
+            --border: #1f293d;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            --accent: #38bdf8;
+            --success: #10b981;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text-main); min-height: 100vh; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 16px 36px; background: rgba(10, 15, 26, 0.96); border-bottom: 1px solid var(--border); }
+        .brand-box { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+        .brand-icon { width: 40px; height: 40px; background: linear-gradient(135deg, #38bdf8, #818cf8); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 20px; color: #000; }
+        .btn-back { background: var(--surface-card); border: 1px solid var(--border); color: #fff; text-decoration: none; padding: 8px 16px; border-radius: 8px; font-size: 12px; font-weight: 700; }
+        .btn-back:hover { border-color: var(--accent); color: var(--accent); }
+        
+        .container { max-width: 1050px; margin: 36px auto; padding: 0 24px 60px; }
+        .page-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.3); color: #34d399; font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 999px; text-transform: uppercase; margin-bottom: 12px; }
+        .booking-card { background: var(--surface); border: 1px solid #38bdf8; border-radius: 20px; padding: 32px; box-shadow: 0 10px 40px rgba(56, 189, 248, 0.15); }
+        
+        .layout-grid { display: grid; grid-template-columns: 1fr 380px; gap: 32px; margin-top: 24px; }
+        .form-box { display: flex; flex-direction: column; gap: 14px; }
+        .field-group label { font-size: 11px; text-transform: uppercase; color: var(--text-dim); font-weight: 700; display: block; margin-bottom: 5px; }
+        .field-input, .field-select { width: 100%; background: var(--surface-card); border: 1px solid var(--border); border-radius: 8px; color: #fff; padding: 10px 14px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; outline: none; }
+        .field-input:focus { border-color: var(--accent); }
+
+        .summary-card { background: var(--surface-card); border: 1px solid var(--border); border-radius: 16px; padding: 22px; text-align: center; }
+        .qr-box { width: 180px; height: 180px; background: #fff; padding: 8px; border-radius: 12px; margin: 12px auto; display: flex; align-items: center; justify-content: center; }
+        .qr-box img { width: 100%; height: 100%; object-fit: contain; }
+        .btn-confirm { width: 100%; background: linear-gradient(135deg, #38bdf8, #2563eb); color: #fff; border: none; padding: 14px; border-radius: 12px; font-size: 14px; font-weight: 800; cursor: pointer; margin-top: 10px; }
+        .btn-wa { width: 100%; background: #25d366; color: #000; font-weight: 800; padding: 12px; border-radius: 12px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 13px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="/" class="brand-box">
+            <div class="brand-icon">Ω</div>
+            <div>
+                <strong style="font-size: 16px;">BioTwin Labs</strong>
+                <span style="font-size: 10px; color: var(--accent); display: block; text-transform: uppercase;">At-Home Blood Draw Booking</span>
+            </div>
+        </a>
+        <a href="/" class="btn-back">← Back to All Services</a>
+    </nav>
+
+    <div class="container">
+        <div class="page-badge">🏠 Direct Home Collection • NABL Partner Network</div>
+        <h1 style="font-size: 28px; font-weight: 800; margin-bottom: 8px;">Book NABL Phlebotomist Home Sample Collection</h1>
+        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 24px;">
+            Certified lab technician sterile vacuum tubes ke saath aapke ghar aakar sample lega. 72+ parameters, Biological Age Report aur Doctor Longevity Blueprint sabhi kuch included hai.
+        </p>
+
+        <div class="booking-card">
+            <div class="layout-grid">
+                
+                <form id="orderForm" onsubmit="submitBooking(event)">
+                    <div class="form-box">
+                        <div class="field-group">
+                            <label>Patient Full Name</label>
+                            <input type="text" id="b_name" class="field-input" placeholder="e.g. Ramesh Kumar" required>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                            <div class="field-group">
+                                <label>Age</label>
+                                <input type="number" id="b_age" class="field-input" value="42" required>
+                            </div>
+                            <div class="field-group">
+                                <label>Gender</label>
+                                <select id="b_gender" class="field-select">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="field-group">
+                            <label>WhatsApp Mobile Number</label>
+                            <input type="tel" id="b_phone" class="field-input" placeholder="e.g. 9343062265" required>
+                        </div>
+                        <div class="field-group">
+                            <label>Complete Home Address & City / Pincode</label>
+                            <input type="text" id="b_address" class="field-input" placeholder="Flat No, Society, Landmark, City & Pincode" required>
+                        </div>
+                        <div class="field-group">
+                            <label>Preferred Fasting Slot (Tomorrow Morning)</label>
+                            <select id="b_slot" class="field-select">
+                                <option value="7:00 AM - 8:00 AM">Tomorrow: 7:00 AM - 8:00 AM (Recommended)</option>
+                                <option value="8:00 AM - 9:00 AM">Tomorrow: 8:00 AM - 9:00 AM</option>
+                                <option value="9:00 AM - 10:00 AM">Tomorrow: 9:00 AM - 10:00 AM</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn-confirm">
+                            ✓ Confirm Booking & Generate Order
+                        </button>
+                    </div>
+                </form>
+
+                <div class="summary-card">
+                    <span style="font-size: 11px; text-transform: uppercase; color: var(--accent); font-weight: 800; display: block;">
+                        Order Summary
+                    </span>
+                    <div style="font-size: 26px; font-weight: 900; color: #10b981; margin: 8px 0;">
+                        ₹1,999
+                    </div>
+                    <div style="font-size: 11px; color: var(--text-dim); margin-bottom: 14px;">
+                        Includes 72+ Tests + Free Home Pickup + Doctor Review
+                    </div>
+
+                    <div class="qr-box">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi://pay?pa=9343062265@upi&pn=BioTwin%20Labs&am=1999&cu=INR&tn=72-Biomarker-Home-Draw" alt="UPI QR Code">
+                    </div>
+
+                    <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 8px;">
+                        Pay via <strong>PhonePe, Google Pay, Paytm or Cash on Sample Pickup</strong>
+                    </p>
+
+                    <a href="#" id="waBtn" class="btn-wa" onclick="directWA(event)">
+                        <span>💬</span>
+                        <span>Book Directly on WhatsApp</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function submitBooking(e) {
+            e.preventDefault();
+            const name = document.getElementById('b_name').value;
+            const phone = document.getElementById('b_phone').value;
+            const address = document.getElementById('b_address').value;
+            const slot = document.getElementById('b_slot').value;
+            const age = document.getElementById('b_age').value;
+            const orderId = `BT-ORD-${Math.floor(100000 + Math.random() * 900000)}`;
+
+            // Log to backend API
+            fetch('/api/book-test', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: name,
+                    phone: phone,
+                    address: address,
+                    slot: slot,
+                    age: age,
+                    order_id: orderId
+                })
+            }).catch(e => console.log(e));
+
+            alert(`✓ Order Successfully Confirmed!
+
+Order ID: ${orderId}
+Patient: ${name}
+Slot: ${slot}
+Home Address: ${address}
+Total Amount: ₹1,999 (UPI / Cash on sample pickup)
+
+NABL technician has been assigned. You will receive a call 30 mins before arrival.`);
+
+            const msg = `Hi BioTwin Labs, I have booked a ₹1,999 Longevity Health Checkup.%0AOrder ID: ${orderId}%0APatient: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AAddress: ${encodeURIComponent(address)}%0ASlot: ${encodeURIComponent(slot)}`;
+            window.open(`https://wa.me/919343062265?text=${msg}`, '_blank');
+        }
+
+        function directWA(e) {
+            e.preventDefault();
+            const name = document.getElementById('b_name').value || "Client";
+            const phone = document.getElementById('b_phone').value || "";
+            const msg = `Hi BioTwin Labs, I want to book the ₹1,999 Longevity Health Checkup at my home.%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}`;
+            window.open(`https://wa.me/919343062265?text=${msg}`, '_blank');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>72+ Biomarker Panel & PhenoAge Matrix | BioTwin Labs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #05070c;
+            --surface: #0a0f1a;
+            --surface-card: #111827;
+            --border: #1f293d;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            --accent: #38bdf8;
+            --success: #10b981;
+            --danger: #ef4444;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text-main); min-height: 100vh; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 16px 36px; background: rgba(10, 15, 26, 0.96); border-bottom: 1px solid var(--border); }
+        .brand-box { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+        .brand-icon { width: 40px; height: 40px; background: linear-gradient(135deg, #38bdf8, #818cf8); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 20px; color: #000; }
+        .btn-back { background: var(--surface-card); border: 1px solid var(--border); color: #fff; text-decoration: none; padding: 8px 16px; border-radius: 8px; font-size: 12px; font-weight: 700; }
+        .btn-back:hover { border-color: var(--accent); color: var(--accent); }
+        
+        .main-container { max-width: 1300px; margin: 30px auto; padding: 0 24px 60px; display: grid; grid-template-columns: 1fr 380px; gap: 28px; }
+        .page-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.25); color: var(--accent); font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 999px; text-transform: uppercase; margin-bottom: 12px; }
+        .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 28px; }
+
+        .subtabs { display: flex; gap: 8px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 4px; }
+        .subtab-btn { background: var(--surface-card); border: 1px solid var(--border); color: var(--text-muted); padding: 8px 14px; border-radius: 10px; font-size: 12px; font-weight: 700; cursor: pointer; white-space: nowrap; }
+        .subtab-btn.active { background: var(--accent); color: #000; border-color: var(--accent); }
+
+        .markers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .marker-card { background: var(--surface-card); border: 1px solid var(--border); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+        .marker-head { display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; font-weight: 700; }
+        .marker-inputs { display: flex; align-items: center; gap: 10px; }
+        .marker-slider { flex: 1; accent-color: var(--accent); cursor: pointer; }
+        .marker-val-input { width: 70px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: #fff; padding: 5px 8px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; text-align: right; }
+        .marker-footer { display: flex; justify-content: space-between; font-size: 10px; color: var(--text-dim); }
+
+        .hud-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px; position: sticky; top: 90px; }
+        .hud-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+        .hud-val { font-family: 'JetBrains Mono', monospace; font-size: 24px; font-weight: 800; color: var(--accent); }
+        .btn-gen { width: 100%; background: linear-gradient(135deg, #38bdf8, #2563eb); color: #fff; border: none; padding: 14px; border-radius: 12px; font-size: 13px; font-weight: 800; cursor: pointer; margin-top: 14px; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="/" class="brand-box">
+            <div class="brand-icon">Ω</div>
+            <div>
+                <strong style="font-size: 16px;">BioTwin Labs</strong>
+                <span style="font-size: 10px; color: var(--accent); display: block; text-transform: uppercase;">72+ Biomarker Panel</span>
+            </div>
+        </a>
+        <a href="/" class="btn-back">← Back to All Services</a>
+    </nav>
+
+    <div class="main-container">
+        <div>
+            <div class="page-badge">🩸 Multi-Omics Engine • Harrison's / Robbins Standards</div>
+            <h1 style="font-size: 26px; font-weight: 800; margin-bottom: 8px;">Full 72+ Biomarker Panel & Phenotypic Aging Matrix</h1>
+            <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+                Taaza blood report ke numbers dalkar exact Levine PhenoAge nikalen. Har biomarker ke aage optimal longevity target diya gaya hai.
+            </p>
+
+            <div class="panel">
+                <div class="subtabs">
+                    <button class="subtab-btn active" onclick="switchCat('cat_cardio', this)">❤️ Cardio & Lipids</button>
+                    <button class="subtab-btn" onclick="switchCat('cat_metabolic', this)">⚡ Metabolic & Glucose</button>
+                    <button class="subtab-btn" onclick="switchCat('cat_inflam', this)">🔥 Inflammation</button>
+                    <button class="subtab-btn" onclick="switchCat('cat_organs', this)">🫀 Liver & Kidney</button>
+                    <button class="subtab-btn" onclick="switchCat('cat_vitamins', this)">🧬 Vitamins & Hormones</button>
+                </div>
+
+                <!-- CARDIO -->
+                <div id="cat_cardio" class="cat-view markers-grid">
+                    <div class="marker-card">
+                        <div class="marker-head"><span>Apolipoprotein B (ApoB)</span><span style="color:var(--text-dim);">mg/dL</span></div>
+                        <div class="marker-inputs">
+                            <input type="range" class="marker-slider" id="sl_apob" min="40" max="180" value="70" oninput="updMarker('apob', this.value)">
+                            <input type="number" class="marker-val-input" id="in_apob" value="70" oninput="updMarker('apob', this.value)">
+                        </div>
+                        <div class="marker-footer"><span>Optimal: < 60</span><span>Lab Limit: 130</span></div>
+                    </div>
+                    <div class="marker-card">
+                        <div class="marker-head"><span>Lipoprotein(a) [Lp(a)]</span><span style="color:var(--text-dim);">nmol/L</span></div>
+                        <div class="marker-inputs">
+                            <input type="range" class="marker-slider" id="sl_lpa" min="5" max="250" value="18" oninput="updMarker('lpa', this.value)">
+                            <input type="number" class="marker-val-input" id="in_lpa" value="18" oninput="updMarker('lpa', this.value)">
+                        </div>
+                        <div class="marker-footer"><span>Optimal: < 30</span><span>Lab Limit: 75</span></div>
+                    </div>
+                    <div class="marker-card">
+                        <div class="marker-head"><span>Triglycerides / HDL Ratio</span><span style="color:var(--text-dim);">ratio</span></div>
+                        <div class="marker-inputs">
+                            <input type="range" class="marker-slider" id="sl_trighdl" min="0.5" max="8.0" step="0.1" value="1.6" oninput="updMarker('trighdl', this.value)">
+                            <input type="number" class="marker-val-input" id="in_trighdl" value="1.6" step="0.1" oninput="updMarker('trighdl', this.value)">
+                        </div>
+                        <div class="marker-footer"><span>Optimal: < 1.5</span><span>Lab Limit: 3.5</span></div>
+                    </div>
+                    <div class="marker-card">
+                        <div class="marker-head"><span>Homocysteine</span><span style="color:var(--text-dim);">µmol/L</span></div>
+                        <div class="marker-inputs">
+                            <input type="range" class="marker-slider" id="sl_homo" min="4" max="40" step="0.5" value="9.2" oninput="updMarker('homo', this.value)">
+                            <input type="number" class="marker-val-input" id="in_homo" value="9.2" step="0.5" oninput="updMarker('homo', this.value)">
+                        </div>
+                        <div class="marker-footer"><span>Optimal: < 9.0</span><span>Lab Limit: 15.0</span></div>
+                    </div>
+                </div>
+
+                <!-- METABOLIC -->
+                <div id="cat_metabolic" class="cat-view markers-grid" style="display: none;">
+                    <div class="marker-card">
+                        <div class="marker-head"><span>Fasting Insulin</span><span style="color:var(--text-dim);">µIU/mL</span></div>
+                        <div class="marker-inputs">
+                            <input type="range" class="marker-slider" id="sl_insulin" min="1.0" max="45.0" step="0.5" value="6.5" oninput="updMarker('insulin', this.value)">
+                            <input type="number" class="marker-val-input" id="in_insulin" value="6.5" step="0.5" oninput="updMarker('insulin', this.value)">
+                        </div>
+                        <div class="marker-footer"><span>Optimal: < 5.0</span><span>Lab Limit: 25.0</span></div>
+                    </div>
+                    <div class="marker-card">
+                        <div class="marker-head"><span>HbA1c</span><span style="color:var(--text-dim);">%</span></div>
+                        <div class="marker-inputs">
+                            <input type="range" class="marker-slider" id="sl_hba1c" min="4.0" max="12.0" step="0.1" value="5.2" oninput="updMarker('hba1c', this.value)">
+                            <input type="number" class="marker-val-input" id="in_hba1c" value="5.2" step="0.1" oninput="updMarker('hba1c', this.value)">
+                        </div>
+                        <div class="marker-footer"><span>Optimal: < 5.2</span><span>Pre-Diab: 5.7 - 6.4</span></div>
+                    </div>
+                    <div class="marker-card">
+                        <div class="marker-head"><span>Fasting Plasma Glucose</span><span style="color:var(--text-dim);">mg/dL</span></div>
+                        <div class="marker-inputs">
+                            <input type="range" class="marker-slider" id="sl_glucose" min="60" max="250" value="88" oninput="updMarker('glucose', this.value)">
+                            <input type="number" class="marker-val-input" id="in_glucose" value="88" oninput="updMarker('glucose', this.value)">
+                        </div>
+                        <div class="marker-footer"><span>Optimal: 72 - 85</span><span>Lab Limit: 99</span></div>
+                    </div>
+                    <div class="marker-card">
+                        <div class="marker-head"><span>Serum Uric Acid</span><span style="color:var(--text-dim);">mg/dL</span></div>
+                        <div class="marker-inputs">
+                            <input type="range" class="marker-slider" id="sl_uric" min="2.0" max="12.0" step="0.1" value="4.8" oninput="updMarker('uric', this.value)">
+                            <input type="number" class="marker-val-input" id="in_uric" value="4.8" step="0.1" oninput="updMarker('uric', this.value)">
+                        </div>
+                        <div class="marker-footer"><span>Optimal: < 5.0</span><span>Lab Limit: 7.2</span></div>
+                    </div>
+                </div>
+
+                <!-- INFLAM -->
+                <div id="cat_inflam" class="cat-view markers-grid" style="display: none;">
+                    <div class="marker-card">
+                        <div class="marker-head"><span>hs-CRP</span><span style="color:var(--text-dim);">mg/L</span></div>
+                        <div class="marker-inputs">
+                            <input type="range" class="marker-slider" id="sl_hscrp" min="0.1" max="15.0" step="0.1" value="0.7" oninput="updMarker('hscrp', this.value)">
+                            <input type="number" class="marker-val-input" id="in_hscrp" value="0.7" step="0.1" oninput="updMarker('hscrp', this.value)">
+                        </div>
+                        <div class="marker-footer"><span>Optimal: < 0.5</span><span>High Risk: > 2.0</span></div>
+                    </div>
+                    <div class="marker-card">
+                        <div class="marker-head"><span>Serum Ferritin</span><span style="color:var(--text-dim);">ng/mL</span></div>
+                        <div class="marker-inputs">
+                            <input type="range" class="marker-slider" id="sl_ferritin" min="10" max="600" value="85" oninput="updMarker('ferritin', this.value)">
+                            <input type="number" class="marker-val-input" id="in_ferritin" value="85" oninput="updMarker('ferritin', this.value)">
+                        </div>
+                        <div class="marker-footer"><span>Optimal: 40 - 120</span><span>Lab Limit: 300</span></div>
+                    </div>
+                </div>
+
+                <!-- ORGANS -->
+                <div id="cat_organs" class="cat-view markers-grid" style="display: none;">
+                    <div class="marker-card">
+                        <div class="marker-head"><span>ALT / SGPT (Liver)</span><span style="color:var(--text-dim);">U/L</span></div>
+                        <div class="marker-inputs">
+                            <input type="range" class="marker-slider" id="sl_alt" min="5" max="150" value="22" oninput="updMarker('alt', this.value)">
+                            <input type="number" class="marker-val-input" id="in_alt" value="22" oninput="updMarker('alt', this.value)">
+                        </div>
+                        <div class="marker-footer"><span>Optimal: < 25</span><span>Lab Limit: 45</span></div>
+                    </div>
+                    <div class="marker-card">
+                        <div class="marker-head"><span>eGFR (Kidney Filtration)</span><span style="color:var(--text-dim);">mL/min</span></div>
+                        <div class="marker-inputs">
+                            <input type="range" class="marker-slider" id="sl_egfr" min="30" max="140" value="105" oninput="updMarker('egfr', this.value)">
+                            <input type="number" class="marker-val-input" id="in_egfr" value="105" oninput="updMarker('egfr', this.value)">
+                        </div>
+                        <div class="marker-footer"><span>Optimal: > 90</span><span>Alert: < 60</span></div>
+                    </div>
+                </div>
+
+                <!-- VITAMINS -->
+                <div id="cat_vitamins" class="cat-view markers-grid" style="display: none;">
+                    <div class="marker-card">
+                        <div class="marker-head"><span>Vitamin D3 (25-OH)</span><span style="color:var(--text-dim);">ng/mL</span></div>
+                        <div class="marker-inputs">
+                            <input type="range" class="marker-slider" id="sl_vitd" min="10" max="120" value="55" oninput="updMarker('vitd', this.value)">
+                            <input type="number" class="marker-val-input" id="in_vitd" value="55" oninput="updMarker('vitd', this.value)">
+                        </div>
+                        <div class="marker-footer"><span>Optimal: 50 - 80</span><span>Deficiency: < 30</span></div>
+                    </div>
+                    <div class="marker-card">
+                        <div class="marker-head"><span>Vitamin B12</span><span style="color:var(--text-dim);">pg/mL</span></div>
+                        <div class="marker-inputs">
+                            <input type="range" class="marker-slider" id="sl_vitb12" min="100" max="1500" value="650" oninput="updMarker('vitb12', this.value)">
+                            <input type="number" class="marker-val-input" id="in_vitb12" value="650" oninput="updMarker('vitb12', this.value)">
+                        </div>
+                        <div class="marker-footer"><span>Optimal: 500 - 900</span><span>Lab Limit: 200</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- RIGHT HUD -->
+        <div>
+            <div class="hud-card">
+                <h3 style="font-size: 14px; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 10px;">
+                    ⚡ Live PhenoAge HUD
+                </h3>
+
+                <div class="hud-row">
+                    <span style="font-size: 12px; color: var(--text-muted);">Calendar Age:</span>
+                    <span class="hud-val">42.0</span>
+                </div>
+                <div class="hud-row">
+                    <span style="font-size: 12px; color: var(--text-muted);">Biological PhenoAge:</span>
+                    <span class="hud-val" id="hudBio">39.8</span>
+                </div>
+                <div class="hud-row">
+                    <span style="font-size: 12px; color: var(--text-muted);">Age Delta:</span>
+                    <span class="hud-val" id="hudDelta" style="color: #10b981;">-2.2 Yrs</span>
+                </div>
+                <div class="hud-row">
+                    <span style="font-size: 12px; color: var(--text-muted);">HOMA-IR Score:</span>
+                    <span class="hud-val" id="hudHoma">1.41</span>
+                </div>
+
+                <form action="/generate-report" method="POST" target="_blank">
+                    <input type="hidden" name="name" value="Patient Executive">
+                    <input type="hidden" name="age" value="42">
+                    <input type="hidden" name="gender" value="Male">
+                    <input type="hidden" name="phone" value="9343062265">
+                    <input type="hidden" name="apob" id="p_apob" value="70">
+                    <input type="hidden" name="fasting_insulin" id="p_insulin" value="6.5">
+                    <input type="hidden" name="fasting_glucose" id="p_glucose" value="88">
+                    <input type="hidden" name="hba1c" value="5.2">
+                    <input type="hidden" name="hs_crp" id="p_hscrp" value="0.7">
+                    <input type="hidden" name="alt" value="22">
+                    <input type="hidden" name="albumin" value="4.5">
+
+                    <button type="submit" class="btn-gen">
+                        📄 Generate Doctor-Signed PDF Report
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchCat(catId, btn) {
+            document.querySelectorAll('.subtab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.cat-view').forEach(v => v.style.display = 'none');
+            btn.classList.add('active');
+            document.getElementById(catId).style.display = 'grid';
+        }
+
+        function updMarker(id, val) {
+            val = parseFloat(val);
+            const sl = document.getElementById(`sl_${id}`);
+            const inp = document.getElementById(`in_${id}`);
+            if (sl) sl.value = val;
+            if (inp) inp.value = val;
+
+            const apob = parseFloat(document.getElementById('in_apob').value) || 70;
+            const insulin = parseFloat(document.getElementById('in_insulin').value) || 6.5;
+            const glucose = parseFloat(document.getElementById('in_glucose').value) || 88;
+            const hscrp = parseFloat(document.getElementById('in_hscrp').value) || 0.7;
+
+            let delta = 0;
+            if (apob > 60) delta += (apob - 60) * 0.04; else delta -= 1.0;
+            if (insulin > 5.0) delta += (insulin - 5.0) * 0.35; else delta -= 1.0;
+            if (glucose > 85) delta += (glucose - 85) * 0.08; else delta -= 0.5;
+            if (hscrp > 0.5) delta += (hscrp - 0.5) * 1.2;
+
+            const bio = (42.0 + delta).toFixed(1);
+            document.getElementById('hudBio').innerText = bio;
+            document.getElementById('hudDelta').innerText = (delta >= 0 ? `+${delta.toFixed(1)} Yrs` : `${delta.toFixed(1)} Yrs`);
+            document.getElementById('hudDelta').style.color = (delta > 1.5 ? '#ef4444' : (delta > 0 ? '#f59e0b' : '#10b981'));
+            document.getElementById('hudHoma').innerText = ((glucose * insulin) / 405).toFixed(2);
+
+            document.getElementById('p_apob').value = apob;
+            document.getElementById('p_insulin').value = insulin;
+            document.getElementById('p_glucose').value = glucose;
+            document.getElementById('p_hscrp').value = hscrp;
+        }
+    </script>
+</body>
+</html>

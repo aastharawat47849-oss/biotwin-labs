@@ -1,0 +1,207 @@
+{
+  "report_id": "BT-2026-943E24",
+  "date_str": "October 24, 2026",
+  "patient": {
+    "name": "Test Client",
+    "age": 42,
+    "gender": "Male",
+    "phone": "9876543210",
+    "email": "test@example.com"
+  },
+  "pheno_age": 62.0,
+  "age_delta": 20.0,
+  "target_bio_age": 59.5,
+  "age_badge_color": "#ef4444",
+  "age_verdict": "Accelerated Organ Aging: 20.0 Years Older than Chronological Age",
+  "subsystems": {
+    "Cardiovascular Longevity": {
+      "score": 40,
+      "status": "ATTENTION_REQUIRED",
+      "markers": [
+        {
+          "name": "Apolipoprotein B (ApoB)",
+          "val": 70.0,
+          "unit": "mg/dL",
+          "status": "SUB-OPTIMAL",
+          "optimal_range": "40.0 - 60.0 mg/dL",
+          "standard_range": "40.0 - 125.0 mg/dL",
+          "clinical_note": "ApoB reflects total atherogenic particle concentration; target < 60 mg/dL halts arterial plaque progression.",
+          "citation": "Sniderman AD et al. Lancet 2019; 394: 1845-56",
+          "doi": "10.1016/S0140-6736(19)32519-X"
+        },
+        {
+          "name": "Lipoprotein(a) [Lp(a)]",
+          "val": 15.0,
+          "unit": "mg/dL",
+          "status": "SUB-OPTIMAL",
+          "optimal_range": "0.0 - 14.0 mg/dL",
+          "standard_range": "0.0 - 30.0 mg/dL",
+          "clinical_note": "Genetically determined cardiovascular risk factor; non-modifiable by diet, requires targeted risk mitigation.",
+          "citation": "Tsimikas S. J Am Coll Cardiol 2017; 69(6): 692-711",
+          "doi": "10.1016/j.jacc.2016.11.054"
+        },
+        {
+          "name": "Triglyceride to HDL Ratio",
+          "val": 1.8,
+          "unit": "ratio",
+          "status": "SUB-OPTIMAL",
+          "optimal_range": "0.0 - 1.0 ratio",
+          "standard_range": "0.0 - 3.0 ratio",
+          "clinical_note": "Surpassing indicator of atherogenic small dense LDL particles and hepatic insulin resistance.",
+          "citation": "McLaughlin T et al. Ann Intern Med 2003; 139(10): 802-9",
+          "doi": "10.7326/0003-4819-139-10-200311180-00008"
+        },
+        {
+          "name": "Homocysteine",
+          "val": 10.5,
+          "unit": "umol/L",
+          "status": "SUB-OPTIMAL",
+          "optimal_range": "6.0 - 8.0 umol/L",
+          "standard_range": "5.0 - 15.0 umol/L",
+          "clinical_note": "Elevated homocysteine induces vascular endothelial toxicity and methylation impairment.",
+          "citation": "Clarke R et al. N Engl J Med 1991; 324(17): 1149-55",
+          "doi": "10.1056/NEJM199104253241701"
+        }
+      ]
+    },
+    "Metabolic Health": {
+      "score": 55,
+      "status": "ATTENTION_REQUIRED",
+      "markers": [
+        {
+          "name": "Fasting Insulin",
+          "val": 6.5,
+          "unit": "uIU/mL",
+          "status": "SUB-OPTIMAL",
+          "optimal_range": "1.5 - 4.5 uIU/mL",
+          "standard_range": "2.6 - 24.9 uIU/mL",
+          "clinical_note": "Early biomarker of hyperinsulinemia and cellular insulin resistance, preceding glucose spikes by 10 years.",
+          "citation": "Kraft JR. Detection of Diabetes Mellitus In Situ (1975) / Crofts C et al. 2016",
+          "doi": "10.3389/fendo.2016.00135"
+        },
+        {
+          "name": "Glycated Hemoglobin (HbA1c)",
+          "val": 5.2,
+          "unit": "%",
+          "status": "OPTIMAL",
+          "optimal_range": "4.8 - 5.2 %",
+          "standard_range": "4.0 - 5.6 %",
+          "clinical_note": "Average 90-day glycemic control; values above 5.3% indicate microvascular protein glycation.",
+          "citation": "Selvin E et al. N Engl J Med 2010; 362(9): 800-11",
+          "doi": "10.1056/NEJMoa0908359"
+        },
+        {
+          "name": "Fasting Blood Glucose",
+          "val": 88.0,
+          "unit": "mg/dL",
+          "status": "SUB-OPTIMAL",
+          "optimal_range": "74.0 - 85.0 mg/dL",
+          "standard_range": "70.0 - 99.0 mg/dL",
+          "clinical_note": "Optimal fasting range prevents hepatic gluconeogenesis overshoot and glycation spikes.",
+          "citation": "Nichols GA et al. Diabetes Care 2008; 31(10): 2001-4",
+          "doi": "10.2337/dc08-0853"
+        },
+        {
+          "name": "Serum Uric Acid",
+          "val": 5.5,
+          "unit": "mg/dL",
+          "status": "SUB-OPTIMAL",
+          "optimal_range": "4.0 - 5.0 mg/dL",
+          "standard_range": "3.5 - 7.2 mg/dL",
+          "clinical_note": "Values > 5.5 mg/dL suppress endothelial nitric oxide and signal fructose/purine metabolic stress.",
+          "citation": "Johnson RJ et al. Nat Rev Rheumatol 2013; 9(10): 630-40",
+          "doi": "10.1038/nrrheum.2013.113"
+        }
+      ]
+    },
+    "Systemic Inflammation": {
+      "score": 85,
+      "status": "EXCELLENT",
+      "markers": [
+        {
+          "name": "High-Sensitivity C-Reactive Protein (hs-CRP)",
+          "val": 0.7,
+          "unit": "mg/L",
+          "status": "SUB-OPTIMAL",
+          "optimal_range": "0.0 - 0.5 mg/L",
+          "standard_range": "0.0 - 3.0 mg/L",
+          "clinical_note": "Indicates low-grade subclinical vascular inflammation; levels > 0.5 mg/L indicate accelerated vascular aging.",
+          "citation": "Ridker PM. Circulation 2003; 107(3): 363-9",
+          "doi": "10.1161/01.CIR.0000053730.47739.3C"
+        }
+      ]
+    },
+    "Hepatic & Cellular Longevity": {
+      "score": 85,
+      "status": "EXCELLENT",
+      "markers": [
+        {
+          "name": "Alanine Aminotransferase (ALT)",
+          "val": 22.0,
+          "unit": "U/L",
+          "status": "OPTIMAL",
+          "optimal_range": "10.0 - 22.0 U/L",
+          "standard_range": "7.0 - 56.0 U/L",
+          "clinical_note": "Levels above 25 U/L strongly correlate with occult non-alcoholic fatty liver disease (NAFLD).",
+          "citation": "Kim HC et al. BMJ 2004; 328(7446): 983",
+          "doi": "10.1136/bmj.38050.593634.63"
+        },
+        {
+          "name": "Gamma-Glutamyl Transferase (GGT)",
+          "val": 22.0,
+          "unit": "U/L",
+          "status": "SUB-OPTIMAL",
+          "optimal_range": "10.0 - 18.0 U/L",
+          "standard_range": "9.0 - 48.0 U/L",
+          "clinical_note": "Ultra-sensitive marker for hepatic oxidative stress and systemic glutathione depletion.",
+          "citation": "Lee DH et al. Clin Chem 2004; 50(10): 1874-6",
+          "doi": "10.1373/clinchem.2004.037192"
+        },
+        {
+          "name": "Serum Albumin",
+          "val": 4.5,
+          "unit": "g/dL",
+          "status": "OPTIMAL",
+          "optimal_range": "4.5 - 5.0 g/dL",
+          "standard_range": "3.5 - 5.2 g/dL",
+          "clinical_note": "Crucial biomarker in Levine PhenoAge; higher levels indicate plasma oncotic and antioxidant capacity.",
+          "citation": "Levine ME. J Gerontol A Biol Sci Med Sci 2013; 68(6): 667-74",
+          "doi": "10.1093/gerona/gls233"
+        }
+      ]
+    },
+    "Endocrine & Micronutrient": {
+      "score": 55,
+      "status": "ATTENTION_REQUIRED",
+      "markers": [
+        {
+          "name": "25-Hydroxy Vitamin D3",
+          "val": 28.0,
+          "unit": "ng/mL",
+          "status": "HIGH_RISK",
+          "optimal_range": "55.0 - 75.0 ng/mL",
+          "standard_range": "30.0 - 100.0 ng/mL",
+          "clinical_note": "Nuclear receptor ligand regulating expression of > 2,000 genes in innate immunity and longevity.",
+          "citation": "Holick MF. N Engl J Med 2007; 357(3): 266-81",
+          "doi": "10.1056/NEJMra070553"
+        },
+        {
+          "name": "Vitamin B12 (Active Cobalamin)",
+          "val": 380.0,
+          "unit": "pg/mL",
+          "status": "SUB-OPTIMAL",
+          "optimal_range": "600.0 - 900.0 pg/mL",
+          "standard_range": "200.0 - 900.0 pg/mL",
+          "clinical_note": "Essential co-factor for remethylation of homocysteine and neuro-protective myelin maintenance.",
+          "citation": "Stabler SP. N Engl J Med 2013; 368(2): 149-60",
+          "doi": "10.1056/NEJMcp1113996"
+        }
+      ]
+    }
+  },
+  "doctor": {
+    "name": "Dr. Aarav Mehta, MD",
+    "credentials": "MD (Internal Medicine), Fellowship in Anti-Aging & Functional Medicine",
+    "registration_no": "MCI-48920-KA"
+  }
+}

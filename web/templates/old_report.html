@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Old Report Time Machine | BioTwin Labs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #05070c;
+            --surface: #0a0f1a;
+            --surface-card: #111827;
+            --border: #1f293d;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            --accent: #38bdf8;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text-main); min-height: 100vh; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 16px 36px; background: rgba(10, 15, 26, 0.96); border-bottom: 1px solid var(--border); }
+        .brand-box { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+        .brand-icon { width: 40px; height: 40px; background: linear-gradient(135deg, #38bdf8, #818cf8); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 20px; color: #000; }
+        .btn-back { background: var(--surface-card); border: 1px solid var(--border); color: #fff; text-decoration: none; padding: 8px 16px; border-radius: 8px; font-size: 12px; font-weight: 700; }
+        .btn-back:hover { border-color: var(--accent); color: var(--accent); }
+        
+        .container { max-width: 980px; margin: 36px auto; padding: 0 24px 60px; }
+        .page-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: var(--warning); font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 999px; text-transform: uppercase; margin-bottom: 12px; }
+        .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 32px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); }
+        
+        .tm-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+        .tm-box { background: var(--surface-card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+        .tm-box label { font-size: 11px; font-weight: 700; color: var(--text-dim); text-transform: uppercase; display: block; margin-bottom: 6px; }
+        .tm-input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; color: #fff; padding: 9px 12px; font-family: 'JetBrains Mono', monospace; font-size: 14px; outline: none; }
+        
+        .drift-box { margin-top: 26px; background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 16px; padding: 24px; }
+        .drift-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 18px; }
+        .drift-card { background: var(--surface-card); border: 1px solid var(--border); border-radius: 12px; padding: 14px; }
+        .drift-card label { font-size: 10px; text-transform: uppercase; color: var(--text-dim); display: block; font-weight: 700; margin-bottom: 4px; }
+        .drift-card val { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 800; }
+        .btn-action { background: linear-gradient(135deg, #38bdf8, #2563eb); color: #fff; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: 800; font-size: 13px; display: inline-flex; align-items: center; gap: 6px; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="/" class="brand-box">
+            <div class="brand-icon">Ω</div>
+            <div>
+                <strong style="font-size: 16px;">BioTwin Labs</strong>
+                <span style="font-size: 10px; color: var(--accent); display: block; text-transform: uppercase;">Time Machine Projector</span>
+            </div>
+        </a>
+        <a href="/" class="btn-back">← Back to All Services</a>
+    </nav>
+
+    <div class="container">
+        <div class="page-badge">⏳ Metabolic Drift • Harrison's Internal Medicine 21st Ed</div>
+        <h1 style="font-size: 28px; font-weight: 800; margin-bottom: 8px;">Old Report Time Machine: Metabolic Drift Projector</h1>
+        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 24px;">
+            Agar aapke paas 1 se 3 saal purani blood report hai, toh elapsed time aur weight change ke basis par Harrison's Internal Medicine beta-cell exhaustion model se calculate karein ki aaj aapka organ decay kitna badh chuka hai.
+        </p>
+
+        <div class="panel">
+            <div class="tm-grid">
+                <div class="tm-box">
+                    <label>Report Kitni Purani Hai? (Years)</label>
+                    <input type="number" id="tm_years" class="tm-input" value="2" min="0.5" max="5" step="0.5" oninput="runDriftCalc()">
+                </div>
+                <div class="tm-box">
+                    <label>Tab Se Vajan Me Farak (Kg)</label>
+                    <input type="number" id="tm_weight" class="tm-input" value="4" oninput="runDriftCalc()">
+                </div>
+                <div class="tm-box">
+                    <label>Purana Fasting Glucose (mg/dL)</label>
+                    <input type="number" id="tm_glu" class="tm-input" value="92" oninput="runDriftCalc()">
+                </div>
+                <div class="tm-box">
+                    <label>Purana HbA1c (%)</label>
+                    <input type="number" id="tm_hba1c" class="tm-input" value="5.3" step="0.1" oninput="runDriftCalc()">
+                </div>
+                <div class="tm-box">
+                    <label>Purane Triglycerides (mg/dL)</label>
+                    <input type="number" id="tm_trig" class="tm-input" value="155" oninput="runDriftCalc()">
+                </div>
+                <div class="tm-box">
+                    <label>Purana Total Cholesterol (mg/dL)</label>
+                    <input type="number" id="tm_chol" class="tm-input" value="195" oninput="runDriftCalc()">
+                </div>
+            </div>
+
+            <div class="drift-box">
+                <strong style="color: #f59e0b; font-size: 14px; display: block; margin-bottom: 14px;">🔮 Aaj Ka Projected Organ Status (Harrison's Beta-Cell Drift):</strong>
+
+                <div class="drift-grid">
+                    <div class="drift-card">
+                        <label>Projected Fasting Glucose</label>
+                        <val id="projGlu" style="color: #ef4444;">102 mg/dL</val>
+                    </div>
+                    <div class="drift-card">
+                        <label>Projected HbA1c</label>
+                        <val id="projHbA1c" style="color: #f59e0b;">5.7%</val>
+                    </div>
+                    <div class="drift-card">
+                        <label>Projected Biological Age</label>
+                        <val id="projBioAge" style="color: #ef4444;">45.2 Yrs</val>
+                    </div>
+                </div>
+
+                <div id="driftDetails" style="font-size: 13px; line-height: 1.7; color: #fff; margin-bottom: 20px;">
+                    Calculating drift rates...
+                </div>
+
+                <a href="/book-blood-test" class="btn-action">
+                    <span>🏠</span>
+                    <span>Book Fresh Checkup to Stop Drift (₹1,999)</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function runDriftCalc() {
+            const elapsed = parseFloat(document.getElementById('tm_years').value) || 2;
+            const weight = parseFloat(document.getElementById('tm_weight').value) || 4;
+            const oldGlu = parseFloat(document.getElementById('tm_glu').value) || 92;
+            const oldHbA1c = parseFloat(document.getElementById('tm_hba1c').value) || 5.3;
+            const oldTrig = parseFloat(document.getElementById('tm_trig').value) || 155;
+
+            const projGlu = Math.round(oldGlu + (elapsed * 2.2) + (weight * 1.5));
+            const projHbA1c = (oldHbA1c + (elapsed * 0.18) + (weight * 0.08)).toFixed(2);
+            const projTrig = Math.round(oldTrig + (elapsed * 5.0) + (weight * 6.0));
+            const projBioAge = (42 + (elapsed * 1.1) + (weight * 0.7)).toFixed(1);
+
+            document.getElementById('projGlu').innerText = `${projGlu} mg/dL`;
+            document.getElementById('projGlu').style.color = (projGlu >= 100 ? '#ef4444' : '#10b981');
+            document.getElementById('projHbA1c').innerText = `${projHbA1c}%`;
+            document.getElementById('projHbA1c').style.color = (projHbA1c >= 5.7 ? '#ef4444' : '#10b981');
+            document.getElementById('projBioAge').innerText = `${projBioAge} Yrs`;
+
+            document.getElementById('driftDetails').innerHTML = `
+                • <strong>Glucose Drift:</strong> Aapka fasting glucose lagbhag <strong>${projGlu} mg/dL</strong> par drift ho chuka hai (${projGlu >= 100 ? '<span style="color:#ef4444;">Pre-Diabetic Range Alert!</span>' : 'Normal'}).<br>
+                • <strong>HbA1c Shift:</strong> Glycated hemoglobin <strong>${projHbA1c}%</strong> tak pahunch chuka hai.<br>
+                • <strong>Triglycerides:</strong> Estimated <strong>${projTrig} mg/dL</strong>. Pichle ${elapsed} saalon me aapka organ decay +${((elapsed * 1.1) + (weight * 0.7)).toFixed(1)} saal badh chuka hai. Naye test se exact status confirm karein.
+            `;
+        }
+
+        window.onload = runDriftCalc;
+    </script>
+</body>
+</html>

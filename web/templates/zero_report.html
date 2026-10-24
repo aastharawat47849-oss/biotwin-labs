@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero-Report Longevity Assessment | BioTwin Labs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #05070c;
+            --surface: #0a0f1a;
+            --surface-card: #111827;
+            --border: #1f293d;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            --accent: #38bdf8;
+            --success: #10b981;
+            --danger: #ef4444;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text-main); min-height: 100vh; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 16px 36px; background: rgba(10, 15, 26, 0.96); border-bottom: 1px solid var(--border); }
+        .brand-box { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+        .brand-icon { width: 40px; height: 40px; background: linear-gradient(135deg, #38bdf8, #818cf8); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 20px; color: #000; }
+        .btn-back { background: var(--surface-card); border: 1px solid var(--border); color: #fff; text-decoration: none; padding: 8px 16px; border-radius: 8px; font-size: 12px; font-weight: 700; }
+        .btn-back:hover { border-color: var(--accent); color: var(--accent); }
+        
+        .container { max-width: 980px; margin: 36px auto; padding: 0 24px 60px; }
+        .page-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.25); color: var(--accent); font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 999px; text-transform: uppercase; margin-bottom: 12px; }
+        .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 32px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); }
+        
+        .quiz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 24px; }
+        .quiz-box { background: var(--surface-card); border: 1px solid var(--border); border-radius: 14px; padding: 18px; }
+        .quiz-box label { font-size: 12px; font-weight: 800; display: block; margin-bottom: 4px; }
+        .quiz-box span.hint { font-size: 11px; color: var(--text-dim); display: block; margin-bottom: 10px; }
+        .quiz-input, .quiz-select { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; color: #fff; padding: 10px 14px; font-family: 'JetBrains Mono', monospace; font-size: 14px; outline: none; }
+        
+        .results-box { margin-top: 28px; background: linear-gradient(145deg, #0f172a, #0b1120); border: 2px solid #38bdf8; border-radius: 16px; padding: 26px; }
+        .res-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 18px; }
+        .res-stat { background: var(--surface-card); border: 1px solid var(--border); border-radius: 12px; padding: 14px; }
+        .res-stat label { font-size: 10px; text-transform: uppercase; color: var(--text-dim); display: block; font-weight: 700; margin-bottom: 4px; }
+        .res-stat val { font-family: 'JetBrains Mono', monospace; font-size: 24px; font-weight: 800; }
+        .btn-action { background: linear-gradient(135deg, #38bdf8, #2563eb); color: #fff; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: 800; font-size: 13px; display: inline-flex; align-items: center; gap: 6px; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="/" class="brand-box">
+            <div class="brand-icon">Ω</div>
+            <div>
+                <strong style="font-size: 16px;">BioTwin Labs</strong>
+                <span style="font-size: 10px; color: var(--accent); display: block; text-transform: uppercase;">Zero-Report Assessment</span>
+            </div>
+        </a>
+        <a href="/" class="btn-back">← Back to All Services</a>
+    </nav>
+
+    <div class="container">
+        <div class="page-badge">📋 Non-Invasive Engine • Guyton & Hall Physiology Ch. 72</div>
+        <h1 style="font-size: 28px; font-weight: 800; margin-bottom: 8px;">Zero-Report 2-Minute Longevity Assessment</h1>
+        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 24px;">
+            Agar aapne kabhi blood test nahi karwaya hai, tab bhi yeh 6 physical markers pait ki charbi (visceral fat), post-prandial glycemic spike aur biological age delta calculate karte hain.
+        </p>
+
+        <div class="panel">
+            <div class="quiz-grid">
+                <div class="quiz-box">
+                    <label>1. Chronological Age (Asli Umar)</label>
+                    <span class="hint">Aapke ID proof ke hisaab se varsh</span>
+                    <input type="number" id="q_age" class="quiz-input" value="42" oninput="runQuizCalc()">
+                </div>
+                <div class="quiz-box">
+                    <label>2. Height (Kadd / Lambai in cm)</label>
+                    <span class="hint">E.g., 5 ft 8 in = 173 cm, 5 ft 10 in = 178 cm</span>
+                    <input type="number" id="q_height" class="quiz-input" value="175" oninput="runQuizCalc()">
+                </div>
+                <div class="quiz-box">
+                    <label>3. Waist Circumference (Kamar ka Ghera in Inches)</label>
+                    <span class="hint">Naabhi (Navel) ke theek upar se tape se naapein</span>
+                    <input type="number" id="q_waist" class="quiz-input" value="36" oninput="runQuizCalc()">
+                </div>
+                <div class="quiz-box">
+                    <label>4. Resting Heart Rate (Aaram ke Waqt Pulse)</label>
+                    <span class="hint">Optimal < 65 bpm. 75 se zyada = sympathetic overdrive</span>
+                    <input type="number" id="q_rhr" class="quiz-input" value="74" oninput="runQuizCalc()">
+                </div>
+                <div class="quiz-box">
+                    <label>5. Post-Meal Fatigue (Khana Khane ke Baad Susti)</label>
+                    <span class="hint">Carb khane ke baad neend aana = early insulin resistance</span>
+                    <select id="q_fatigue" class="quiz-select" onchange="runQuizCalc()">
+                        <option value="none">Kabhi nahi / No fatigue</option>
+                        <option value="mild" selected>Kabhi-kabhi thodi susti aati hai</option>
+                        <option value="frequent">Roz khane ke baad bhari neend aati hai</option>
+                        <option value="severe">Bahut zyada neend aur meetha khane ki tez craving</option>
+                    </select>
+                </div>
+                <div class="quiz-box">
+                    <label>6. Family History of Diabetes / Heart Disease</label>
+                    <span class="hint">Mata, pita ya bhai-behan ko sugar ya BP ki bimari</span>
+                    <select id="q_fam" class="quiz-select" onchange="runQuizCalc()">
+                        <option value="none">Kisi ko nahi / No history</option>
+                        <option value="one" selected>Ek parent (Mother or Father)</option>
+                        <option value="both">Dono parents (Both Mother & Father)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="results-box">
+                <div class="res-grid">
+                    <div class="res-stat">
+                        <label>Waist-to-Height Ratio</label>
+                        <val id="resWHtR" style="color: #38bdf8;">0.52</val>
+                    </div>
+                    <div class="res-stat">
+                        <label>Estimated Biological Age</label>
+                        <val id="resBioAge" style="color: #f59e0b;">44.2 Yrs</val>
+                    </div>
+                    <div class="res-stat">
+                        <label>Estimated Fasting Insulin</label>
+                        <val id="resInsulin" style="color: #ef4444;">8.5 µIU/mL</val>
+                    </div>
+                </div>
+
+                <div id="resSummary" style="font-size: 13px; line-height: 1.7; color: #fff; margin-bottom: 20px;">
+                    Calculating...
+                </div>
+
+                <div style="display: flex; gap: 14px; align-items: center;">
+                    <a href="/book-blood-test" class="btn-action">
+                        <span>🩸</span>
+                        <span>Confirm with NABL Blood Test (₹1,999)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function runQuizCalc() {
+            const age = parseFloat(document.getElementById('q_age').value) || 42;
+            const height = parseFloat(document.getElementById('q_height').value) || 175;
+            const waistInches = parseFloat(document.getElementById('q_waist').value) || 36;
+            const rhr = parseFloat(document.getElementById('q_rhr').value) || 74;
+            const fatigue = document.getElementById('q_fatigue').value;
+            const fam = document.getElementById('q_fam').value;
+
+            const waistCm = waistInches * 2.54;
+            const whtr = (waistCm / height).toFixed(2);
+
+            let ageDelta = 0;
+            if (whtr > 0.50) ageDelta += (whtr - 0.50) * 35;
+            if (rhr > 70) ageDelta += (rhr - 70) * 0.15;
+            if (fatigue === 'mild') ageDelta += 0.8;
+            if (fatigue === 'frequent') ageDelta += 2.0;
+            if (fatigue === 'severe') ageDelta += 3.5;
+            if (fam === 'one') ageDelta += 0.5;
+            if (fam === 'both') ageDelta += 1.2;
+
+            const bioAge = (age + ageDelta).toFixed(1);
+            let estInsulin = (4.0 + (whtr > 0.5 ? (whtr - 0.5) * 80 : 0) + (fatigue !== 'none' ? 2.8 : 0)).toFixed(1);
+
+            document.getElementById('resWHtR').innerText = whtr;
+            document.getElementById('resWHtR').style.color = (whtr > 0.50 ? '#ef4444' : '#10b981');
+            document.getElementById('resBioAge').innerText = `${bioAge} Yrs`;
+            document.getElementById('resBioAge').style.color = (ageDelta > 1.5 ? '#ef4444' : (ageDelta > 0 ? '#f59e0b' : '#10b981'));
+            document.getElementById('resInsulin').innerText = `${estInsulin} µIU/mL`;
+
+            document.getElementById('resSummary').innerHTML = `
+                • <strong>Waist-to-Height Ratio: ${whtr}</strong> (${whtr > 0.5 ? '<span style="color:#ef4444;">Visceral Fat Borderline High (Guyton Ch. 72)</span>' : '<span style="color:#10b981;">Optimal Visceral Tone</span>'})<br>
+                • <strong>Estimated Biological Age: ${bioAge} Years</strong> (${ageDelta >= 0 ? `+${ageDelta.toFixed(1)} Years older than actual age` : 'Younger than calendar baseline'})<br>
+                • <strong>Metabolic Suggestion:</strong> Khana khane ke baad susti aana early insulin resistance ka sign hai. Accurate diagnosis ke liye ghar par blood test book karein.
+            `;
+        }
+
+        window.onload = runQuizCalc;
+    </script>
+</body>
+</html>
