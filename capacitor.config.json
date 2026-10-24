@@ -1,0 +1,12 @@
+{
+  "appId": "com.biotwin.labs",
+  "appName": "BioTwin Labs",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true
+  },
+  "android": {
+    "allowMixedContent": true
+  }
+}
